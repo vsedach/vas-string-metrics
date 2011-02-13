@@ -1,0 +1,18 @@
+vas-string-metrics provides the Jaro, Jaro-Winkler, Levenshtein, and
+normalized Levenshtein string distance/similarity metrics algorithms.
+
+The Jaro (function jaro-distance), Jaro-Winkler (function
+jaro-winkler-distance) and normalized Levenshtein (function
+normalized-levenshtein-distance) algorithms return a number in the
+range 0 to 1 indicating how similar two given strings are - where 0
+indicates no similarity, and 1 indicates a perfect match.
+
+The Jaro-Winkler metric is a heuristic suitable for shorter strings
+(such as place and people names), while the Levenshtein distance is
+computed as the minimum number of insertions, deletions, or
+substitutions needed to transform one string into the other (function
+levenshtein-distance).
+
+The code is distributed under the terms of the LLGPLv3 (see LICENSE
+for details), except for the unit tests, which are in the public
+domain.
