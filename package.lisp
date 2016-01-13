@@ -3,4 +3,5 @@
   (:export #:jaro-distance
            #:jaro-winkler-distance
            #:levenshtein-distance
-           #:normalized-levenshtein-distance))
+           #:normalized-levenshtein-distance
+           #:soerensen-dice-coefficient))
