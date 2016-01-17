@@ -1,6 +1,6 @@
 vas-string-metrics provides the Jaro, Jaro-Winkler, Soerensen-Dice,
 Levenshtein, and normalized Levenshtein string distance/similarity
-[metrics algorithms.
+metrics algorithms.
 
 The Jaro (function jaro-distance), Jaro-Winkler (function
 jaro-winkler-distance), Soerensen-Dice (function
@@ -15,7 +15,7 @@ computed as the minimum number of insertions, deletions, or
 substitutions needed to transform one string into the other (function
 levenshtein-distance).
 
-The Soerensen-Dice coefficient is a statistic suitable for heterogenouse
+The Soerensen-Dice coefficient is a statistic suitable for heterogenous
 data sets and gives less weight to outliers[1].
 
 The code is distributed under the terms of the LLGPLv3 (see LICENSE
