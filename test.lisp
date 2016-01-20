@@ -24,6 +24,10 @@ failed test. Returns nil if all tests pass."
   (assert (= 3 (levenshtein-distance "Sunday" "Saturday")))
   (assert (= 2 (levenshtein-distance "gambol" "gumbo")))
   (assert (= 0 (normalized-levenshtein-distance "abc" "xyz")))
-  (assert (= 1 (normalized-levenshtein-distance "foobar" "foobar"))))
+  (assert (= 1 (normalized-levenshtein-distance "foobar" "foobar")))
+
+  (assert (= 0.8 (soerensen-dice-coefficient "french republic" "republic of france")))
+  (assert (< 0.666 (soerensen-dice-coefficient "french republic" "republic of congo") 0.667))
+  (assert (= 0.25 (soerensen-dice-coefficient "night" "nacht"))))
 
 (export 'run-tests)

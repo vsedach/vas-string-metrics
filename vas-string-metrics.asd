@@ -5,4 +5,5 @@
   :license "LLGPLv3"
   :components ((:file "package")
                (:file "levenshtein" :depends-on ("package"))
-               (:file "jaro-winkler" :depends-on ("package"))))
+               (:file "jaro-winkler" :depends-on ("package"))
+               (:file "soerensen-dice" :depends-on ("package"))))
