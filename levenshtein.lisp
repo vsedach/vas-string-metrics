@@ -1,7 +1,9 @@
 (in-package #:vas-string-metrics)
 
 (defun levenshtein-distance (s1 s2
-                             &key (key #'identity))
+                             &key
+                               (test #'equalp) ; case insensitive
+                               (key #'identity))
   "Finds the Levenshtein distance (minimum number of edits) from string s1 to string s2."
   (let* ((s1len (length s1))
          (s2len (length s2))
@@ -17,8 +19,9 @@
        do
          (let* ((col 0)
                 (dist
-                 (if (char= (funcall key (aref s1 col))
-                            (funcall key (aref s2 row)))
+                 (if (funcall test
+                              (funcall key (aref s1 col))
+                              (funcall key (aref s2 row)))
                      row
                      (1+ (min row
                               (aref buf col))))))
@@ -27,8 +30,9 @@
             for col from 1 below s1len
             do
               (let* ((dist
-                      (if (char= (funcall key (aref s1 col))
-                                 (funcall key (aref s2 row)))
+                      (if (funcall test
+                                   (funcall key (aref s1 col))
+                                   (funcall key (aref s2 row)))
                           (aref buf (1- col))
                           (1+ (min prev
                                    (aref buf (1- col))
